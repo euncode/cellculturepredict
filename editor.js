@@ -1,4 +1,4 @@
-import UploadAdapter from 'UploadAdapter.js'
+import UploadAdapter from 'https://euncode.github.io/cellculturepredict/UploadAdapter.js'
 
 export default function makeEditor(target) {
     return ClassicEditor.create(document.querySelector(target), {
