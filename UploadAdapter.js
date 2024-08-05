@@ -13,14 +13,14 @@ export default class UploadAdapter {
 
     _initRequest() {
         const xhr = this.xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:8000/api/image/upload', true);
+        xhr.open('POST', 'http://localhost:80/api/image/upload', true);
         xhr.responseType = 'json';
     }
 
     _initListeners(resolve, reject, file) {
         const xhr = this.xhr;
         const loader = this.loader;
-        const genericErrorText = 'ÆÄÀÏÀ» ¾÷·Îµå ÇÒ ¼ö ¾ø½À´Ï´Ù.'
+        const genericErrorText = 'íŒŒì¼ì„ ì—…ë¡œë“œ í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.'
 
         xhr.addEventListener('error', () => {reject(genericErrorText)})
         xhr.addEventListener('abort', () => reject())
@@ -31,7 +31,7 @@ export default class UploadAdapter {
             }
 
             resolve({
-                default: response.url //¾÷·ÎµåµÈ ÆÄÀÏ ÁÖ¼Ò
+                default: response.url //ì—…ë¡œë“œëœ íŒŒì¼ ì£¼ì†Œ
             })
         })
     }
